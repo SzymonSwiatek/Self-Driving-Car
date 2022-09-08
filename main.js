@@ -8,7 +8,7 @@ const carCtx = carCanvas.getContext("2d");
 const networkCtx = networkCanvas.getContext("2d");
 
 const road = new Road(carCanvas.width / 2, 0.9 * carCanvas.width);
-const N = 100;
+const N = 1000;
 const cars = generateCars(N);
 let bestCar = cars[0];
 if (localStorage.getItem("bestBrain")) {
@@ -21,10 +21,14 @@ if (localStorage.getItem("bestBrain")) {
 }
 
 const traffic = [
-  new Car(road.getLaneCenter(1), -100, 30, 50, "DUMMY", 1.5),
-  new Car(road.getLaneCenter(0), -300, 30, 50, "DUMMY", 1.5),
-  new Car(road.getLaneCenter(2), -500, 30, 50, "DUMMY", 1.5),
-  new Car(road.getLaneCenter(1), -700, 30, 50, "DUMMY", 1.5),
+  new Car(road.getLaneCenter(1), -100, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(0), -300, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(2), -600, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(0), -600, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(1), -900, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(0), -900, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(2), -1200, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(1), -1200, 30, 50, "DUMMY", 2),
 ];
 
 animate();
